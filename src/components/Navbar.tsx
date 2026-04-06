@@ -8,6 +8,7 @@ const navLinks = [
   { to: "/despre-noi", label: "Despre Noi" },
   { to: "/tipuri-beton", label: "Tipuri de Beton" },
   { to: "/servicii", label: "Servicii" },
+  { to: "/calculator", label: "Calculator Preț" },
   { to: "/galerie", label: "Galerie" },
   { to: "/recenzii", label: "Recenzii" },
   { to: "/contact", label: "Contact" },
