@@ -11,6 +11,7 @@ import Servicii from "./pages/Servicii";
 import Galerie from "./pages/Galerie";
 import Recenzii from "./pages/Recenzii";
 import Contact from "./pages/Contact";
+import Calculator from "./pages/Calculator";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
