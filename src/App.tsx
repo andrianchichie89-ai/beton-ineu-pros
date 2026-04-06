@@ -11,6 +11,7 @@ import Servicii from "./pages/Servicii";
 import Galerie from "./pages/Galerie";
 import Recenzii from "./pages/Recenzii";
 import Contact from "./pages/Contact";
+import Calculator from "./pages/Calculator";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,6 +28,7 @@ const App = () => (
             <Route path="/despre-noi" element={<DespreNoi />} />
             <Route path="/tipuri-beton" element={<TipuriBeton />} />
             <Route path="/servicii" element={<Servicii />} />
+            <Route path="/calculator" element={<Calculator />} />
             <Route path="/galerie" element={<Galerie />} />
             <Route path="/recenzii" element={<Recenzii />} />
             <Route path="/contact" element={<Contact />} />
