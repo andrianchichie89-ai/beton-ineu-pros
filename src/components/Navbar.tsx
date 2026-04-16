@@ -28,19 +28,21 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop nav */}
-        {/* Desktop nav */}
-        <div className="hidden lg:flex items-center gap-0.5">
+        <div className="hidden lg:flex items-center gap-1">
           {navLinks.map((link) => (
             <Link
               key={link.to}
               to={link.to}
-              className={`px-3 py-1.5 text-[13px] font-medium rounded-full transition-all duration-200 ${
+              className={`relative px-3 py-2 text-[13px] font-medium transition-colors duration-200 ${
                 location.pathname === link.to
-                  ? "text-primary-foreground bg-primary shadow-sm"
-                  : "text-foreground/70 hover:text-primary hover:bg-muted"
+                  ? "text-primary"
+                  : "text-foreground/60 hover:text-primary"
               }`}
             >
               {link.label}
+              {location.pathname === link.to && (
+                <span className="absolute bottom-0 left-3 right-3 h-0.5 bg-primary rounded-full" />
+              )}
             </Link>
           ))}
         </div>
