@@ -20,20 +20,23 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-b border-border shadow-sm">
-      <div className="container flex items-center justify-between h-16 md:h-20">
-        <Link to="/" className="flex items-center gap-2">
-          <span className="font-heading text-xl md:text-2xl font-extrabold text-primary tracking-tight">
-            INVENT<span className="text-secondary"> BETON</span>
+      <div className="container h-16 md:h-[72px] grid grid-cols-[auto_1fr_auto] items-center gap-6">
+        {/* Logo */}
+        <Link to="/" className="flex-shrink-0">
+          <span className="font-heading text-lg md:text-xl font-extrabold leading-tight text-primary tracking-tight block">
+            INVENT
+            <br />
+            <span className="text-secondary">BETON</span>
           </span>
         </Link>
 
-        {/* Desktop nav */}
-        <div className="hidden lg:flex items-center gap-1">
+        {/* Desktop nav — centered */}
+        <div className="hidden lg:flex items-center justify-center gap-0.5">
           {navLinks.map((link) => (
             <Link
               key={link.to}
               to={link.to}
-              className={`relative px-3 py-2 text-[13px] font-medium transition-colors duration-200 ${
+              className={`relative px-2.5 xl:px-3 py-2 text-[13px] font-medium whitespace-nowrap transition-colors duration-200 ${
                 location.pathname === link.to
                   ? "text-primary"
                   : "text-foreground/60 hover:text-primary"
@@ -41,19 +44,23 @@ const Navbar = () => {
             >
               {link.label}
               {location.pathname === link.to && (
-                <span className="absolute bottom-0 left-3 right-3 h-0.5 bg-primary rounded-full" />
+                <span className="absolute bottom-0 left-2.5 right-2.5 xl:left-3 xl:right-3 h-0.5 bg-primary rounded-full" />
               )}
             </Link>
           ))}
         </div>
 
-        <div className="hidden lg:flex items-center gap-4">
-          <a href="tel:+40700000000" className="flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors">
+        {/* Right side — phone + CTA */}
+        <div className="hidden lg:flex items-center gap-4 flex-shrink-0">
+          <a
+            href="tel:+40700000000"
+            className="flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors whitespace-nowrap"
+          >
             <Phone className="h-4 w-4" />
             0700 000 000
           </a>
           <Link to="/contact">
-            <Button className="bg-secondary text-secondary-foreground hover:bg-secondary/80 font-semibold rounded-full px-6 shadow-md hover:shadow-lg transition-all duration-200">
+            <Button className="bg-secondary text-secondary-foreground hover:bg-secondary/80 font-semibold rounded-full px-5 shadow-md hover:shadow-lg transition-all duration-200 whitespace-nowrap">
               Solicită Ofertă
             </Button>
           </Link>
@@ -61,7 +68,7 @@ const Navbar = () => {
 
         {/* Mobile toggle */}
         <button
-          className="lg:hidden p-2 text-foreground"
+          className="lg:hidden p-2 text-foreground justify-self-end"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
@@ -72,16 +79,16 @@ const Navbar = () => {
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="lg:hidden bg-card border-t border-border animate-fade-in">
-          <div className="container py-4 flex flex-col gap-2">
+          <div className="container py-4 flex flex-col gap-1">
             {navLinks.map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
                 onClick={() => setMobileOpen(false)}
-                className={`px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 ${
+                className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors duration-200 ${
                   location.pathname === link.to
-                    ? "text-primary-foreground bg-primary shadow-sm"
-                    : "text-foreground/70 hover:text-primary hover:bg-muted"
+                    ? "text-primary bg-muted"
+                    : "text-foreground/60 hover:text-primary hover:bg-muted/50"
                 }`}
               >
                 {link.label}
