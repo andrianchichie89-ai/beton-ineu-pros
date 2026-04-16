@@ -19,7 +19,7 @@ const reviews = [
 const Index = () => (
   <>
     {/* Hero */}
-    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <img src={heroBg} alt="Stația de betoane Invent Beton - vedere aeriană" className="absolute inset-0 w-full h-full object-cover" width={1920} height={1080} />
       <div className="absolute inset-0 hero-gradient" />
       <div className="relative z-10 container text-center text-primary-foreground">
@@ -36,7 +36,7 @@ const Index = () => (
             </Button>
           </Link>
           <Link to="/tipuri-beton">
-            <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 text-base px-8 py-6 font-semibold">
+            <Button size="lg" className="bg-white/15 backdrop-blur-sm border border-white/40 text-white hover:bg-white/25 text-base px-8 py-6 font-semibold">
               Vezi Tipuri de Beton
             </Button>
           </Link>
