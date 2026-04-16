@@ -11,36 +11,29 @@ const stats = [
 
 const DespreNoi = () => (
   <>
+    {/* Hero compact: title + stats side by side, no scroll needed */}
     <section className="section-padding bg-card">
       <div className="container">
-        <h1 className="text-3xl md:text-5xl font-extrabold text-foreground mb-6">Despre Invent Beton</h1>
-        <div className="grid lg:grid-cols-2 gap-10 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 items-center">
           <div>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              <strong className="text-foreground">Invent Beton</strong> este o stație de betoane modernă situată în Ineu, județul Arad. Cu echipamente de ultimă generație și o echipă dedicată, producem beton de înaltă calitate pentru o gamă variată de proiecte de construcții — de la fundații rezidențiale la lucrări industriale complexe.
-            </p>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              Ne mândrim cu respectarea strictă a standardelor europene EN 206, testare constantă în laborator și livrare la timp la orice șantier din zonă. Fiecare lot de beton este verificat și documentat pentru a garanta performanța și durabilitatea.
+            <h1 className="text-3xl md:text-5xl font-extrabold text-foreground mb-4">Despre Invent Beton</h1>
+            <p className="text-muted-foreground leading-relaxed mb-3">
+              <strong className="text-foreground">Invent Beton</strong> este o stație de betoane modernă situată în Ineu, județul Arad. Producem beton de înaltă calitate conform standardelor europene EN 206, cu livrare rapidă pe orice șantier din zonă.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Investim continuu în tehnologie, flotă și personal, pentru a oferi clienților noștri servicii complete: de la consultanță în alegerea rețetei de beton, până la pompare și livrare pe șantier.
+              Investim continuu în tehnologie, flotă și personal, pentru a oferi servicii complete: consultanță, producție, pompare și livrare.
             </p>
           </div>
-          <img src={aboutImg} alt="Stația de betoane Invent Beton" className="rounded-lg shadow-lg w-full object-cover h-80 lg:h-96" loading="lazy" width={1200} height={800} />
-        </div>
-      </div>
-    </section>
-
-    {/* Stats */}
-    <section className="section-padding bg-primary text-primary-foreground">
-      <div className="container grid grid-cols-2 lg:grid-cols-4 gap-8">
-        {stats.map((s) => (
-          <div key={s.label} className="text-center">
-            <s.icon className="h-10 w-10 mx-auto mb-3 text-secondary" />
-            <div className="text-3xl md:text-4xl font-extrabold">{s.value}</div>
-            <div className="text-sm text-primary-foreground/70 mt-1">{s.label}</div>
+          <div className="grid grid-cols-2 gap-4">
+            {stats.map((s) => (
+              <div key={s.label} className="bg-primary text-primary-foreground rounded-lg p-5 text-center">
+                <s.icon className="h-8 w-8 mx-auto mb-2 text-secondary" />
+                <div className="text-2xl md:text-3xl font-extrabold">{s.value}</div>
+                <div className="text-xs text-primary-foreground/70 mt-1">{s.label}</div>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </section>
 
