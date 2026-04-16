@@ -19,7 +19,7 @@ const reviews = [
 const Index = () => (
   <>
     {/* Hero */}
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative flex items-center justify-center overflow-hidden" style={{ minHeight: "calc(100vh - 5rem)" }}>
       <img src={heroBg} alt="Stația de betoane Invent Beton - vedere aeriană" className="absolute inset-0 w-full h-full object-cover" width={1920} height={1080} />
       <div className="absolute inset-0 hero-gradient" />
       <div className="relative z-10 container text-center text-primary-foreground">
