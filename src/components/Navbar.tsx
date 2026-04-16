@@ -28,15 +28,16 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden lg:flex items-center gap-1">
+        {/* Desktop nav */}
+        <div className="hidden lg:flex items-center gap-0.5">
           {navLinks.map((link) => (
             <Link
               key={link.to}
               to={link.to}
-              className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+              className={`px-3 py-1.5 text-[13px] font-medium rounded-full transition-all duration-200 ${
                 location.pathname === link.to
-                  ? "text-primary bg-muted"
-                  : "text-foreground/70 hover:text-primary hover:bg-muted/50"
+                  ? "text-primary-foreground bg-primary shadow-sm"
+                  : "text-foreground/70 hover:text-primary hover:bg-muted"
               }`}
             >
               {link.label}
@@ -44,13 +45,13 @@ const Navbar = () => {
           ))}
         </div>
 
-        <div className="hidden lg:flex items-center gap-3">
-          <a href="tel:+40700000000" className="flex items-center gap-2 text-sm font-semibold text-primary">
+        <div className="hidden lg:flex items-center gap-4">
+          <a href="tel:+40700000000" className="flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors">
             <Phone className="h-4 w-4" />
             0700 000 000
           </a>
           <Link to="/contact">
-            <Button className="bg-secondary text-secondary-foreground hover:bg-secondary/90 font-semibold">
+            <Button className="bg-secondary text-secondary-foreground hover:bg-secondary/80 font-semibold rounded-full px-6 shadow-md hover:shadow-lg transition-all duration-200">
               Solicită Ofertă
             </Button>
           </Link>
@@ -75,17 +76,17 @@ const Navbar = () => {
                 key={link.to}
                 to={link.to}
                 onClick={() => setMobileOpen(false)}
-                className={`px-4 py-3 rounded-md text-sm font-medium ${
+                className={`px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 ${
                   location.pathname === link.to
-                    ? "text-primary bg-muted"
-                    : "text-foreground/70 hover:text-primary"
+                    ? "text-primary-foreground bg-primary shadow-sm"
+                    : "text-foreground/70 hover:text-primary hover:bg-muted"
                 }`}
               >
                 {link.label}
               </Link>
             ))}
             <Link to="/contact" onClick={() => setMobileOpen(false)}>
-              <Button className="w-full mt-2 bg-secondary text-secondary-foreground hover:bg-secondary/90 font-semibold">
+              <Button className="w-full mt-3 bg-secondary text-secondary-foreground hover:bg-secondary/80 font-semibold rounded-full shadow-md">
                 Solicită Ofertă
               </Button>
             </Link>
