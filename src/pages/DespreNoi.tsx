@@ -3,7 +3,7 @@ import aboutImg from "@/assets/about-plant.jpg";
 import fleetImg from "@/assets/fleet.jpg";
 
 const stats = [
-  { icon: Factory, value: "120 m³/zi", label: "Capacitate de producție" },
+  { icon: Factory, value: "210 m³/zi", label: "Capacitate de producție" },
   { icon: Truck, value: "8+", label: "Autobetoniere" },
   { icon: Users, value: "500+", label: "Clienți mulțumiți" },
   { icon: Award, value: "100%", label: "Beton certificat" },
