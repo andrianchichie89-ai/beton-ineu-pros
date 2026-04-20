@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Printer, Phone, Scissors, BadgePercent, Sparkles, Check, Calendar } from "lucide-react";
 
