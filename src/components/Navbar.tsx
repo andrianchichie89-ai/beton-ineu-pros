@@ -9,6 +9,7 @@ const navLinks = [
   { to: "/tipuri-beton", label: "Tipuri de Beton" },
   { to: "/servicii", label: "Servicii" },
   { to: "/calculator", label: "Calculator Preț" },
+  { to: "/oferta", label: "Ofertă -10%" },
   { to: "/galerie", label: "Galerie" },
   { to: "/recenzii", label: "Recenzii" },
   { to: "/contact", label: "Contact" },
