@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Truck, Clock, Award, ShieldCheck, Star, Phone } from "lucide-react";
+import { BadgePercent, ArrowRight } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const advantages = [
