@@ -101,7 +101,7 @@ const Index = () => (
             </Button>
           </Link>
           <a href="tel:+40700000000">
-            <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 font-semibold px-8 py-6">
+            <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 font-bold px-8 py-6">
               Sună Acum: 0700 000 000
             </Button>
           </a>
