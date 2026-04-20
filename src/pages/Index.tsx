@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Truck, Clock, Award, ShieldCheck, Star, Phone } from "lucide-react";
+import { BadgePercent, ArrowRight } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const advantages = [
@@ -86,6 +87,24 @@ const Index = () => (
             </Button>
           </Link>
         </div>
+      </div>
+    </section>
+
+    {/* Promo banner */}
+    <section className="py-10 bg-gradient-to-r from-secondary via-secondary to-primary text-secondary-foreground">
+      <div className="container">
+        <Link to="/oferta" className="group flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 text-center md:text-left">
+          <BadgePercent className="h-12 w-12 flex-shrink-0" />
+          <div className="flex-1 max-w-xl">
+            <p className="text-xs uppercase tracking-widest font-bold opacity-90 mb-1">Ofertă limitată</p>
+            <h3 className="text-2xl md:text-3xl font-extrabold leading-tight">
+              Reducere până la 10% — printează cuponul
+            </h3>
+          </div>
+          <span className="inline-flex items-center gap-2 bg-white/15 hover:bg-white/25 backdrop-blur-sm border border-white/30 rounded-full px-5 py-3 font-semibold whitespace-nowrap transition-colors">
+            Vezi cuponul <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+          </span>
+        </Link>
       </div>
     </section>
 
