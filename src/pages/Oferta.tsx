@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Printer, Phone, Scissors, BadgePercent, Sparkles, Check, Calendar } from "lucide-react";
 
@@ -106,21 +107,37 @@ const Oferta = () => {
                 { v: timeLeft.minutes, l: "Min" },
                 { v: timeLeft.seconds, l: "Sec" },
               ].map((t) => (
-                <div key={t.l} className="bg-card border border-border rounded-xl px-4 md:px-6 py-3 md:py-4 min-w-[70px] md:min-w-[90px] shadow-sm text-center">
-                  <div className="text-3xl md:text-5xl font-extrabold text-primary tabular-nums leading-none">
+                <motion.div
+                  key={t.l}
+                  animate={{ scale: [1, 1.05, 1] }}
+                  transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }}
+                  className="bg-card border border-border rounded-xl px-4 md:px-6 py-3 md:py-4 min-w-[70px] md:min-w-[90px] shadow-sm text-center"
+                >
+                  <motion.div
+                    key={t.v}
+                    initial={{ y: -10, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                    className="text-3xl md:text-5xl font-extrabold text-primary tabular-nums leading-none"
+                  >
                     {String(t.v).padStart(2, "0")}
-                  </div>
+                  </motion.div>
                   <div className="text-[10px] md:text-xs uppercase tracking-wider text-muted-foreground mt-1 font-semibold">
                     {t.l}
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
 
           {/* Coupon Card */}
-          <div
+          <motion.div
             id="coupon-printable"
+            initial={{ rotateY: 90, opacity: 0, scale: 0.9 }}
+            animate={{ rotateY: 0, opacity: 1, scale: 1 }}
+            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+            style={{ transformPerspective: 1200, transformStyle: "preserve-3d" }}
+            whileHover={{ scale: 1.01, transition: { duration: 0.3 } }}
             className="relative bg-card rounded-2xl shadow-2xl overflow-hidden border-2 border-secondary/30"
           >
             {/* Decorative top stripe */}
@@ -188,7 +205,7 @@ const Oferta = () => {
             <div className="bg-muted/60 border-t border-border px-6 md:px-10 py-3 text-[11px] md:text-xs text-muted-foreground text-center">
               Prezintă acest cupon printat la sediul nostru sau șoferului la livrare. Nu se cumulează cu alte promoții active.
             </div>
-          </div>
+          </motion.div>
 
           {/* Actions */}
           <div className="no-print flex flex-col sm:flex-row gap-3 justify-center mt-8">
