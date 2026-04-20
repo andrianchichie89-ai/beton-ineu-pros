@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Truck, Clock, Award, ShieldCheck, Star } from "lucide-react";
+import { Truck, Clock, Award, ShieldCheck, Star, Phone } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const advantages = [
@@ -102,7 +102,7 @@ const Index = () => (
           </Link>
           <a href="tel:+40700000000">
             <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 font-bold px-8 py-6">
-              Sună Acum: 0700 000 000
+              <Phone className="mr-1" /> Sună Acum: 0700 000 000
             </Button>
           </a>
         </div>
